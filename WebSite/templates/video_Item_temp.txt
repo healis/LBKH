@@ -1,28 +1,29 @@
 ﻿<div class="video_item">
     <div class="video_item_img">
-        <img src="video_img/img1.jpg" />
+        <img src="video_img/xiaotou.jpg" />
         <div class="video_item_title">$VIDEO-NAME</div>
     </div>
     <div class="video_item_content">
        <table style="width:100%">
 		   <tr>
-				<th style="width:40px;height:30px"><img style="width:25px;height:25px" src="images/video_time.png"/></th>
+				<th style="width:100px;height:40px"><img style="width:25px;height:25px" src="images/video_time.png"/>[时长]</th>
 				<td>$VIDEO-TIME</td>
 		   </tr>
 		   <tr>
-				<th style="width:40px;;height:30px"><img style="width:25px;height:25px" src="images/watch_count.png"/></th>
-				<td>$VIEW-COUNT</td>
+				<th style="width:100px;;height:40px"><img style="width:25px;height:25px" src="images/watch_count.png"/>[好评]</th>
+				<td>$GOOD-COUNT</td>
 		   </tr>
 		   <tr>
-				<th style="width:40px;;height:30px"><img style="width:25px;height:25px" src="images/video_good.png"/></th>
-				<td>$VIEW-COUNT</td>
+				<th style="width:100px;;height:40px"><img style="width:25px;height:25px" src="images/video_good.png"/>[差评]</th>
+				<td>$BAD-COUNT</td>
 		   </tr>
 		    <tr>
-				<th style="width:40px;;height:30px;border-bottom:dashed 1px #ccc"><img style="width:25px;height:25px" src="images/video_perforam.png"/></th>
+				<th style="width:100px;;height:40px;border-bottom:dashed 1px #ccc"><img style="width:25px;height:25px" src="images/video_perforam.png"/>[浏览次数]</th>
 				<td style="border-bottom:dashed 1px #ccc">$VIEW-COUNT</td>
 		   </tr>
 		   <tr>
-			<td colspan="2">$VIDEO-DESC</td>
+			<th>[表演人员	]</th>
+			<td colspan="1">$VIDEO-PREFORM</td>
 		   </tr>
 	   </table>
     </div>

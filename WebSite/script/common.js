@@ -3,12 +3,10 @@ function media_open(title_name, url) {
     layer.open({
         type: 2,
         title: title_name,
-        area: ['630px', '360px'],
+        area: ['840px', '460px'],
         shade: 0.8,
         shadeClose: false,
         content: url
-
-
     });
 }
 
@@ -16,10 +14,10 @@ function media_open(title_name, url) {
 
 
 //弹出即全屏
-function openFullWindow(title,url) {
+function openFullWindow(title, url) {
     var index = layer.open({
         type: 2,
-        title:title,
+        title: title,
         content: url,
         area: ['300px', '195px'],
         maxmin: true

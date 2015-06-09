@@ -15,40 +15,67 @@
     <script src="script/common.js"></script>
     <title>萝卜开会</title>
     <script>
+
+        var pageIndex = 0;
         jQuery(function () {
+
             jQuery("#mascory").masonry({
                 itemSelector: '.video_item',
                 columnWidth: 220
             });
-
             jQuery.ajaxSettings.async = false;
             LoadVideoInfo();
             LoadAuthorInfo();
             InitEvent();
+
         });
         //加载人员信息
         function LoadAuthorInfo() {
-            jQuery.getJSON("Ajax_Hanlder/Ajax_Get_Author_List.ashx", { "TOP": 7 }, function (author_data) {
+            jQuery.getJSON("Ajax_Hanlder/Ajax_Get_Author_List.ashx?m=" + Math.random(), { "TOP": 7 }, function (author_data) {
+
                 jQuery(author_data).each(function (i, m) {
-                    var img = $("<img src='author_img/fenggong.png' class='img-circle' />");
-                    img.css("display", "none");
+                    var img = $("<img src='" + m.AUTHOR_IMG + "' class='img-circle' />");
+
                     img.attr("data-value", m.AUTHOR_KY)
                     jQuery(".author_list").append(img);
-                    img.fadeIn(2000);
                 });
                 jQuery(".author_list").append("<img src='author_img/more.png' data-value='0' class='img-circle' />")
             })
         }
         function LoadVideoInfo() {
-            jQuery.getJSON("Ajax_Hanlder/Ajax_Get_Video_List.ashx", function (data) {
-                jQuery.get("templates/video_Item_temp.txt?r="+Math.random()).success(function (resHtml) {
-                    var html = resHtml;
-                    jQuery(data).each(function (i, m) {
-                        var $item = jQuery(html.replace("$VIDEO-DESC", m.VIDEO_DESC).replace("$VIDEO-NAME", m.VIDEO_NAME));
-                        jQuery("#mascory").append($item).masonry("appended", $item);
-                    })
+
+            if (jQuery("#divNotNum").html() != "已全部加载完") {
+                jQuery.getJSON("Ajax_Hanlder/Ajax_Get_Video_List.ashx?PAGEINDEX=" + pageIndex + "&r=" + Math.random(), function (data) {
+                    if (data.list_count == undefined || data.list_count == null) {
+                        jQuery.get("templates/video_Item_temp.txt?r=" + Math.random()).success(function (resHtml) {
+                            var html = resHtml;
+                            jQuery(data).each(function (i, m) {
+                                var $item = jQuery(html.replace("$VIDEO-PREFORM", m.VIDEO_PERFORMER)
+                                    .replace("$VIDEO-NAME", m.VIDEO_NAME)
+                                    .replace("$VIDEO-TIME", m.VIDEO_TIME)
+                                    .replace("$VIEW-COUNT", m.VODEO_VIEW_COUNT)
+                                    .replace("$GOOD-COUNT", m.VIDEO_GOOD_CLICK)
+                                    .replace("$BAD-COUNT", m.VIDEO_BAD_CLICK)
+
+                                    );
+                                $item.hover(function () {
+                                    jQuery(this).find(".video_item_img").children(".video_item_title").fadeIn();
+                                }, function () {
+                                    jQuery(this).find(".video_item_img").children(".video_item_title").fadeOut();
+
+                                }).on("click", function () {
+                                    media_open("小偷公司", "video_info.aspx");
+                                })
+                                jQuery("#mascory").append($item).masonry("appended", $item);
+                            })
+                        });
+                    } else {
+                        jQuery("#divNotNum").show();
+                        jQuery("#divNotNum").html("已全部加载完");
+                    }
+
                 });
-            });
+            }
         }
 
         function LoadAuthorDetail(author_ky) {
@@ -79,20 +106,13 @@
         初始化事件
         */
         function InitEvent() {
-            jQuery(".video_item").hover(function () {
-                jQuery(this).find(".video_item_img").children(".video_item_title").fadeIn();
-            }, function () {
-                jQuery(this).find(".video_item_img").children(".video_item_title").fadeOut();
 
-            }).on("click", function () {
-                media_open("小偷公司", "http://player.youku.com/embed/XNDk2NzU5Njcy");
-            })
             ///点击人物图标
             jQuery(".author_list img").click(function () {
 
                 var author_ky = jQuery(this).attr("data-value");
                 if (author_ky == null || author_ky == undefined || author_ky == 0) {
-                    layer.msg("更多[More]", {icon:1});
+                    layer.msg("更多[More]", { icon: 1 });
                 } else {
                     LoadAuthorDetail(author_ky);
                     jQuery(".author_info").slideDown(1000);
@@ -102,6 +122,16 @@
             jQuery(".author_info_button span").click(function () {
                 jQuery(".author_info").slideUp(1000);
             })
+
+            jQuery(window).scroll(function () {
+                var scrollTop = $(this).scrollTop();
+                var scrollHeight = $(document).height();
+                var windowHeight = $(this).height();
+                if (scrollTop + windowHeight == scrollHeight) {
+                    pageIndex++;
+                    LoadVideoInfo();
+                }
+            });
 
         }
         //送花
@@ -155,6 +185,8 @@
         </div>
         <div class="div_title">最新相声小品</div>
         <div id="mascory">
+        </div>
+        <div id="divNotNum" style="display: none; height: 100px; border-top: dashed 1px #ccc; line-height: 50px; text-align: center; color: #ccc; font-size: 20px">
         </div>
     </form>
 </body>
