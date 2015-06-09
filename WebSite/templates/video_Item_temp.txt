@@ -1,0 +1,29 @@
+﻿<div class="video_item">
+    <div class="video_item_img">
+        <img src="video_img/img1.jpg" />
+        <div class="video_item_title">$VIDEO-NAME</div>
+    </div>
+    <div class="video_item_content">
+       <table style="width:100%">
+		   <tr>
+				<th style="width:40px;height:30px"><img style="width:25px;height:25px" src="images/video_time.png"/></th>
+				<td>$VIDEO-TIME</td>
+		   </tr>
+		   <tr>
+				<th style="width:40px;;height:30px"><img style="width:25px;height:25px" src="images/watch_count.png"/></th>
+				<td>$VIEW-COUNT</td>
+		   </tr>
+		   <tr>
+				<th style="width:40px;;height:30px"><img style="width:25px;height:25px" src="images/video_good.png"/></th>
+				<td>$VIEW-COUNT</td>
+		   </tr>
+		    <tr>
+				<th style="width:40px;;height:30px;border-bottom:dashed 1px #ccc"><img style="width:25px;height:25px" src="images/video_perforam.png"/></th>
+				<td style="border-bottom:dashed 1px #ccc">$VIEW-COUNT</td>
+		   </tr>
+		   <tr>
+			<td colspan="2">$VIDEO-DESC</td>
+		   </tr>
+	   </table>
+    </div>
+</div>

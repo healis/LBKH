@@ -1,0 +1,160 @@
+﻿
+
+/*导航*/
+
+.nav {
+    height: 50px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 3px 3px 19px black;
+    margin: 30px;
+}
+
+    .nav table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0px 0px;
+    }
+
+        .nav table tr td {
+            width: 100px;
+            color: white;
+            font-size: 14px;
+            height: 50px;
+            border-right: solid 1px white;
+            text-align: center;
+            background: #0b5297;
+        }
+
+            .nav table tr td:hover {
+                -webkit-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                -moz-transform: scale(1.1);
+                cursor: pointer;
+                transition: background 0.2s ease-in-out;
+                -webkit-transition: background 0.2s ease-in-out;
+                -moz-transition: background 0.2s ease-in-out;
+                -ms-transition: background 0.2s ease-in-out;
+                background: orange;
+            }
+
+.div_title {
+    height: 50px;
+    font-size: 20px;
+    margin: 20px;
+    color: #ccc;
+}
+
+/*所有视频Item样式*/
+.video_item {
+    border: solid 1px #ccc;
+    width: 215px;
+    background: white;
+    position: relative;
+    box-shadow: 1px 1px 5px #ccc;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+    .video_item:hover {
+        border-right: solid 1px #ac1010;
+        border-bottom: solid 3px #ac1010;
+        z-index: 999;
+        /*background: #333;
+        color: white;*/
+    }
+
+.video_item_img {
+    padding: 5px;
+    width: 203px;
+    height: 150px;
+}
+
+    .video_item_img img {
+        width: 203px;
+        height: 150px;
+    }
+
+.video_item_title {
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    width: 203px;
+    position: absolute;
+    top: 120px;
+    padding-left: 10px;
+    background: rgba(0,0,0,0.8);
+    display: none;
+}
+
+.video_item_content {
+    padding: 10px;
+    line-height: 25px;
+}
+/*顶部人员信息样式*/
+.author_list {
+    height: 100px;
+    background: url(../images/div_line.png) repeat-x 0px 50px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+    .author_list img {
+        margin-top: 10px;
+        margin-left: 80px;
+        width: 80px;
+        height: 80px;
+        border: solid 1px #ccc;
+    }
+
+        .author_list img:hover {
+            border: solid 3px #ccc;
+            transform: scale(1.1);
+            box-shadow: 3px 3px 10px #333;
+        }
+/*人员详细信息*/
+.author_info {
+    background: #333;
+    margin-bottom: 10px;
+    color: white;
+    display: none;
+    margin: 20px;
+}
+
+    .author_info .author_info_button {
+        color: white;
+        text-align: right;
+    }
+
+        .author_info .author_info_button span {
+            font-size: 30px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+    .author_info .author_img {
+        width: 150px;
+        height: 150px;
+        margin: 15px;
+    }
+
+    .author_info .author_desc {
+        padding: 10px;
+        line-height: 30px;
+        color: white;
+        text-indent: 30px;
+    }
+
+    .author_info .author_name {
+        font-size: 30px;
+        color: white;
+        font-weight: bold;
+        height: 50px;
+        text-align: center;
+    }
+
+    .author_info .author_attr {
+        width: 100px;
+        color: white;
+        text-align: center;
+    }

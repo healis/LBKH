@@ -1,0 +1,35 @@
+﻿<table style="margin-bottom: 20px; width: 100%" > 
+<tr >
+ <th class="author_name" > $AUTHOR-NAME</th > 
+<th class="author_attr" > 生日</th > 
+<td> $AUTHOR-BIRTHDAY</td > 
+<th class="author_attr" > 性别</th >
+ <td> $AUTHOR-SEX</td > 
+<th class="author_attr" > 出生地</th >
+ <td>$AUTHOR-TOWN</td >
+ <th class="author_attr" > 代表作</th >
+ <td > $AUTHOR-OPUS</td > 
+</tr > 
+<tr >
+ <th class="author_name" > &nbsp;</th >
+ <th class="author_attr" > 百科地址</th > 
+<td colspan="7" ><span onclick="clickBaiKe(this)">$AUTHOR-BAIKE</span></td > 
+</tr > 
+<tr >
+ <td style="text-align: center" > 
+    <img src="$AUTHOR-IMG" class="img-circle author_img" / >
+ </td > 
+<td class="author_desc" colspan="8" >
+	$AUTHOR-DESC 
+</td >
+ </tr > 
+ <tr>
+	<td class="author_name">&nbsp;</td>
+	<th class="author_attr"><img src='images/video.png' style='width:30px;height:30px'/></th>
+	<td>$VIDEO-NUM</td>
+	<td colspan="6" style="text-align:right;padding-right:50px">
+		<img onclick="clickSendFlover(this)" data-value='$AUTHOR-KY' src="images/send_flowe.png" style="width:30px;height:30px;cursor:pointer" title="送花"/>
+		<span>$AUTHOR-FLOWER</span>
+	</td>
+ </tr>
+</table >

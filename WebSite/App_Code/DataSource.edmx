@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBHelper.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="TBKH_AUTHOR">
+          <Key>
+            <PropertyRef Name="AUTHOR_KY" />
+          </Key>
+          <Property Name="AUTHOR_KY" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AUTHOR_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="AUTHOR_BIRTHDAY" Type="date" />
+          <Property Name="AUTHOR_SEX_CODE" Type="varchar" MaxLength="20" />
+          <Property Name="AUTHOR_SEX_DESC" Type="varchar" MaxLength="50" />
+          <Property Name="AUTHOR_HOMETOWN" Type="varchar" MaxLength="200" />
+          <Property Name="AUTHOR_OPUS" Type="varchar" MaxLength="500" />
+          <Property Name="AUTHOR_DESC" Type="text" />
+          <Property Name="AUTHOR_ADD_TIME" Type="datetime" />
+          <Property Name="AUTHOR_STATUS_CODE" Type="int" />
+          <Property Name="AUTHOR_STATUS_DESC" Type="varchar" MaxLength="100" />
+          <Property Name="AUTHOR_WORKS" Type="varchar" MaxLength="50" />
+          <Property Name="AUTHOR_BAIKE_URL" Type="varchar" MaxLength="100" />
+          <Property Name="AUTHOR_FRIEND" Type="varchar" MaxLength="500" />
+          <Property Name="AUTHOR_IMG" Type="varchar" MaxLength="100" />
+          <Property Name="FLOWER_NUM" Type="int" />
+        </EntityType>
+        <EntityType Name="TBKH_VIDEO_INFO">
+          <Key>
+            <PropertyRef Name="VIDEO_KY" />
+          </Key>
+          <Property Name="VIDEO_KY" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VIDEO_AUTHOR_KY" Type="int" />
+          <Property Name="VIDEO_NAME" Type="varchar" MaxLength="200" />
+          <Property Name="VIDEO_TIME" Type="varchar" MaxLength="100" />
+          <Property Name="VIDEO_IMG" Type="varchar" MaxLength="100" />
+          <Property Name="VODEO_VIEW_COUNT" Type="int" />
+          <Property Name="VIDEO_DESC" Type="text" />
+          <Property Name="VIDEO_SHARE_URL" Type="varchar" MaxLength="1000" />
+          <Property Name="VIDEO_GOOD_CLICK" Type="int" />
+          <Property Name="VIDEO_BAD_CLICK" Type="int" />
+          <Property Name="VIDEO_ADD_TIME" Type="datetime" />
+          <Property Name="VIDEO_STATUS_CODE" Type="int" />
+          <Property Name="VIDEO_STATUS_DESC" Type="varchar" MaxLength="50" />
+          <Property Name="VIDEO_PERFORMER" Type="varchar" MaxLength="500" />
+          <Property Name="VIDEO_FORM" Type="varchar" MaxLength="200" />
+          <Property Name="VIDEO_HEIGHT" Type="int" />
+          <Property Name="VIDEO_WIDTH" Type="int" />
+        </EntityType>
+        <EntityContainer Name="DBHelperStoreContainer">
+          <EntitySet Name="TBKH_AUTHOR" EntityType="Self.TBKH_AUTHOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBKH_VIDEO_INFO" EntityType="Self.TBKH_VIDEO_INFO" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBHelper" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="TBKH_AUTHOR">
+          <Key>
+            <PropertyRef Name="AUTHOR_KY" />
+          </Key>
+          <Property Name="AUTHOR_KY" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AUTHOR_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AUTHOR_BIRTHDAY" Type="DateTime" Precision="0" />
+          <Property Name="AUTHOR_SEX_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AUTHOR_SEX_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AUTHOR_HOMETOWN" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="AUTHOR_OPUS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="AUTHOR_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AUTHOR_ADD_TIME" Type="DateTime" Precision="3" />
+          <Property Name="AUTHOR_STATUS_CODE" Type="Int32" />
+          <Property Name="AUTHOR_STATUS_DESC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AUTHOR_WORKS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AUTHOR_BAIKE_URL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AUTHOR_FRIEND" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="AUTHOR_IMG" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FLOWER_NUM" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TBKH_VIDEO_INFO">
+          <Key>
+            <PropertyRef Name="VIDEO_KY" />
+          </Key>
+          <Property Name="VIDEO_KY" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VIDEO_AUTHOR_KY" Type="Int32" />
+          <Property Name="VIDEO_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="VIDEO_TIME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VIDEO_IMG" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VODEO_VIEW_COUNT" Type="Int32" />
+          <Property Name="VIDEO_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VIDEO_SHARE_URL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="VIDEO_GOOD_CLICK" Type="Int32" />
+          <Property Name="VIDEO_BAD_CLICK" Type="Int32" />
+          <Property Name="VIDEO_ADD_TIME" Type="DateTime" Precision="3" />
+          <Property Name="VIDEO_STATUS_CODE" Type="Int32" />
+          <Property Name="VIDEO_STATUS_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VIDEO_PERFORMER" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="VIDEO_FORM" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="VIDEO_HEIGHT" Type="Int32" />
+          <Property Name="VIDEO_WIDTH" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="WebEntity" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBKH_AUTHOR" EntityType="Self.TBKH_AUTHOR" />
+          <EntitySet Name="TBKH_VIDEO_INFO" EntityType="Self.TBKH_VIDEO_INFO" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBHelperStoreContainer" CdmEntityContainer="WebEntity">
+          <EntitySetMapping Name="TBKH_AUTHOR">
+            <EntityTypeMapping TypeName="DBHelper.TBKH_AUTHOR">
+              <MappingFragment StoreEntitySet="TBKH_AUTHOR">
+                <ScalarProperty Name="FLOWER_NUM" ColumnName="FLOWER_NUM" />
+                <ScalarProperty Name="AUTHOR_KY" ColumnName="AUTHOR_KY" />
+                <ScalarProperty Name="AUTHOR_NAME" ColumnName="AUTHOR_NAME" />
+                <ScalarProperty Name="AUTHOR_BIRTHDAY" ColumnName="AUTHOR_BIRTHDAY" />
+                <ScalarProperty Name="AUTHOR_SEX_CODE" ColumnName="AUTHOR_SEX_CODE" />
+                <ScalarProperty Name="AUTHOR_SEX_DESC" ColumnName="AUTHOR_SEX_DESC" />
+                <ScalarProperty Name="AUTHOR_HOMETOWN" ColumnName="AUTHOR_HOMETOWN" />
+                <ScalarProperty Name="AUTHOR_OPUS" ColumnName="AUTHOR_OPUS" />
+                <ScalarProperty Name="AUTHOR_DESC" ColumnName="AUTHOR_DESC" />
+                <ScalarProperty Name="AUTHOR_ADD_TIME" ColumnName="AUTHOR_ADD_TIME" />
+                <ScalarProperty Name="AUTHOR_STATUS_CODE" ColumnName="AUTHOR_STATUS_CODE" />
+                <ScalarProperty Name="AUTHOR_STATUS_DESC" ColumnName="AUTHOR_STATUS_DESC" />
+                <ScalarProperty Name="AUTHOR_WORKS" ColumnName="AUTHOR_WORKS" />
+                <ScalarProperty Name="AUTHOR_BAIKE_URL" ColumnName="AUTHOR_BAIKE_URL" />
+                <ScalarProperty Name="AUTHOR_FRIEND" ColumnName="AUTHOR_FRIEND" />
+                <ScalarProperty Name="AUTHOR_IMG" ColumnName="AUTHOR_IMG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBKH_VIDEO_INFO">
+            <EntityTypeMapping TypeName="DBHelper.TBKH_VIDEO_INFO">
+              <MappingFragment StoreEntitySet="TBKH_VIDEO_INFO">
+                <ScalarProperty Name="VIDEO_KY" ColumnName="VIDEO_KY" />
+                <ScalarProperty Name="VIDEO_AUTHOR_KY" ColumnName="VIDEO_AUTHOR_KY" />
+                <ScalarProperty Name="VIDEO_NAME" ColumnName="VIDEO_NAME" />
+                <ScalarProperty Name="VIDEO_TIME" ColumnName="VIDEO_TIME" />
+                <ScalarProperty Name="VIDEO_IMG" ColumnName="VIDEO_IMG" />
+                <ScalarProperty Name="VODEO_VIEW_COUNT" ColumnName="VODEO_VIEW_COUNT" />
+                <ScalarProperty Name="VIDEO_DESC" ColumnName="VIDEO_DESC" />
+                <ScalarProperty Name="VIDEO_SHARE_URL" ColumnName="VIDEO_SHARE_URL" />
+                <ScalarProperty Name="VIDEO_GOOD_CLICK" ColumnName="VIDEO_GOOD_CLICK" />
+                <ScalarProperty Name="VIDEO_BAD_CLICK" ColumnName="VIDEO_BAD_CLICK" />
+                <ScalarProperty Name="VIDEO_ADD_TIME" ColumnName="VIDEO_ADD_TIME" />
+                <ScalarProperty Name="VIDEO_STATUS_CODE" ColumnName="VIDEO_STATUS_CODE" />
+                <ScalarProperty Name="VIDEO_STATUS_DESC" ColumnName="VIDEO_STATUS_DESC" />
+                <ScalarProperty Name="VIDEO_PERFORMER" ColumnName="VIDEO_PERFORMER" />
+                <ScalarProperty Name="VIDEO_FORM" ColumnName="VIDEO_FORM" />
+                <ScalarProperty Name="VIDEO_HEIGHT" ColumnName="VIDEO_HEIGHT" />
+                <ScalarProperty Name="VIDEO_WIDTH" ColumnName="VIDEO_WIDTH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
