@@ -3,7 +3,7 @@ function media_open(title_name, url) {
     layer.open({
         type: 2,
         title: title_name,
-        area: ['840px', '460px'],
+        area: ['840px', '540px'],
         shade: 0.8,
         shadeClose: false,
         content: url
