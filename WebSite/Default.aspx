@@ -28,6 +28,7 @@
             LoadAuthorInfo();
             InitEvent();
 
+
         });
         //加载人员信息
         function LoadAuthorInfo() {
@@ -56,7 +57,8 @@
                                     .replace("$VIEW-COUNT", m.VODEO_VIEW_COUNT)
                                     .replace("$GOOD-COUNT", m.VIDEO_GOOD_CLICK)
                                     .replace("$BAD-COUNT", m.VIDEO_BAD_CLICK)
-
+                                    .replace("$VIDEO-KY", m.VIDEO_KY)
+                                    .replace("$VIDEO-IMG",m.VIDEO_IMG)
                                     );
                                 $item.hover(function () {
                                     jQuery(this).find(".video_item_img").children(".video_item_title").fadeIn();
@@ -64,7 +66,7 @@
                                     jQuery(this).find(".video_item_img").children(".video_item_title").fadeOut();
 
                                 }).on("click", function () {
-                                    media_open("小偷公司", "video_info.aspx");
+                                    media_open("video_info.aspx?VIDEO_KY=" + m.VIDEO_KY, '840px', '435px');
                                 })
                                 jQuery("#mascory").append($item).masonry("appended", $item);
                             })
@@ -157,7 +159,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-
+        <a href="javascript:scroll(0,0)">返回顶部</a>
         <div class="nav">
             <table>
                 <tr>
@@ -186,7 +188,7 @@
         <div class="div_title">最新相声小品</div>
         <div id="mascory">
         </div>
-        <div id="divNotNum" style="display: none; height: 100px; border-top: dashed 1px #ccc; line-height: 50px; text-align: center; color: #ccc; font-size: 20px">
+        <div id="divNotNum" class="nothing">
         </div>
     </form>
 </body>

@@ -93,17 +93,17 @@
 }
 /*顶部人员信息样式*/
 .author_list {
-    height: 100px;
-    background: url(../images/div_line.png) repeat-x 0px 50px;
+    padding:20px;
     margin-bottom: 10px;
     overflow: hidden;
 }
 
     .author_list img {
-        margin-top: 10px;
+        
         margin-left: 80px;
         width: 80px;
         height: 80px;
+        
         border: solid 1px #ccc;
     }
 
@@ -158,3 +158,15 @@
         color: white;
         text-align: center;
     }
+
+
+
+.nothing {
+    margin-top: 10px;
+    display: none;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    color: #ccc;
+    font-size: 20px;
+}

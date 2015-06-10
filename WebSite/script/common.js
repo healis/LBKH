@@ -1,12 +1,10 @@
 ﻿/*打开窗口*/
-function media_open(title_name, url) {
+function media_open(url, width, height) {
     layer.open({
+        title: "萝卜开会",
         type: 2,
-        title: title_name,
-        area: ['840px', '540px'],
-        shade: 0.8,
-        shadeClose: false,
-        content: url
+        area: [width, height],
+        content: [url, 'no']
     });
 }
 
@@ -31,4 +29,9 @@ function openFullWindow(title, url) {
 function formatJsonDate(fromatStr) {
     var jsonDate = new Date(parseInt(fromatStr.substring(6, fromatStr.length - 2)));
     return jsonDate.getFullYear() + "-" + (jsonDate.getMonth() + 1) + "-" + jsonDate.getDate();
+}
+
+
+function window_open_NoTitle(url,width,height) {
+    window.open(url, 'newwindow', 'height='+height+', width='+width+', top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')
 }
