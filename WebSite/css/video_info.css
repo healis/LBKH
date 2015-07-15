@@ -1,0 +1,67 @@
+﻿
+
+.video_tools {
+    background: #333;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+    .video_tools table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0px 0px;
+    }
+
+        .video_tools table tr td {
+            border: solid 1px #232222;
+            color: white;
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+            .video_tools table tr td:hover {
+                background-color: orange;
+                cursor: pointer;
+            }
+
+
+
+.divVideoDetail {
+    position: absolute;
+    color: white;
+    left: 40px;
+    top: 0px;
+    color: white;
+    max-height: 350px;
+    overflow: auto;
+    overflow-x: hidden;
+    background: #333;
+    display: none;
+    opacity: 0.8;
+}
+
+    .divVideoDetail table {
+        width: 750px;
+        border-collapse: collapse;
+        border-spacing: 0px 0px;
+    }
+
+        .divVideoDetail table tr th {
+            color: white;
+            font-weight: normal;
+            width: 80px;
+            border: solid 1px #232222;
+            text-align: center;
+            height: 50px;
+        }
+
+        .divVideoDetail table tr td {
+            color: white;
+            font-size: 12px;
+            border: solid 1px #232222;
+            text-align: center;
+            padding-left: 10px;
+        }
